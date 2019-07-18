@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+.city-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.city-item{
+  border: 1px solid black;
+  padding: 5px;
+}
