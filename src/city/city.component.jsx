@@ -7,7 +7,6 @@ export class City extends Component {
     search: ""
   };
   handleSearch = () => {
-    console.log("test");
     axios
       .get(
         `https://samples.openweathermap.org/data/2.5/weather?q=${
@@ -15,9 +14,9 @@ export class City extends Component {
         }&appid=b6907d289e10d714a6e88b30761fae22`
       )
       .then(res => {
-        const cities = res.data;
-        console.log(cities);
-        this.setState({ cities: [{ ...cities }] });
+        let cities = [...this.state.cities];
+        cities.push(res.data);
+        this.setState({ cities: cities });
       });
   };
   handleRemove = city => {
